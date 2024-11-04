@@ -85,7 +85,7 @@ def main():
         print("6. Sair")
 
    
-        opcao = int(input("Informe a opção desejada: "))
+        opcao = int(input("\nInforme a opção desejada: "))
 
         match(opcao):
             case 1:
