@@ -82,7 +82,7 @@ def main():
         print("3. Deletar Usuario.")
         print("4. Atualizar Usuario.")
         print("5. Consultar 1 Usuario.")
-        print("6. Sair")
+        print("0. Sair")
 
    
         opcao = int(input("\nInforme a opção desejada: "))
@@ -118,7 +118,7 @@ def main():
                 resposta = input("\nDeseja escolher mais uma opção do menu? ")
                 if resposta == "nao":
                     break
-            case 6:
+            case 0:
                 print("\nSair.")
                 break
             case _:
