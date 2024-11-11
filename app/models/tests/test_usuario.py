@@ -1,6 +1,6 @@
 import pytest
 
-from models.usuario import Usuario
+from app.models.usuario import Usuario
 
 @pytest.fixture
 def usuario_valido():
@@ -26,7 +26,7 @@ def test_usuario_nome_invalido_erro():
 
 def test_usuario_email_vazio_retorna_mensagem_erro():
     with pytest.raises(ValueError, match="O que está sendo solicitano está vazio."):
-        Usuario("Marta", "", "1234")
+        Usuario("Marta","", "1234")
 
 def test_usuario_email_invalido_erro():
     with pytest.raises(TypeError, match="O que está sendo solicitado está inválido."):
