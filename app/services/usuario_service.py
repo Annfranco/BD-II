@@ -1,6 +1,6 @@
-from models.usuario import Usuario
-from repositories.usuario_repository import UsuarioRepository
-from config.connection import session
+from app.models.usuario import Usuario
+from app.repositories.usuario_repository import UsuarioRepository
+from app.config.connection import session
 
 class UsuarioService:
     def __init__(self, repository: UsuarioRepository) -> None:

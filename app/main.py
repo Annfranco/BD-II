@@ -1,8 +1,12 @@
 import os
-from services.usuario_service import UsuarioService
-from repositories.usuario_repository import UsuarioRepository
-from config.connection import Session
-# from models.usuario import Usuario
+import sys
+
+# Adiciona o diretório raiz ao sys.path
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
+from app.services.usuario_service import UsuarioService
+from app.repositories.usuario_repository import UsuarioRepository
+from app.config.connection import Session
 
 os.system("cls || clear")
 def main():

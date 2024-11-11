@@ -1,4 +1,7 @@
 {
+    "python.autoComplete.extraPaths": [
+        "./app"
+    ],
     "python.testing.pytestArgs": [
         "app"
     ],
