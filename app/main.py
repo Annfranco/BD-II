@@ -1,9 +1,8 @@
 import os
 from services.usuario_service import UsuarioService
 from repositories.usuario_repository import UsuarioRepository
-from sqlalchemy.orm import Session
 from config.connection import Session
-from models.usuario import Usuario
+# from models.usuario import Usuario
 
 os.system("cls || clear")
 def main():
@@ -11,7 +10,7 @@ def main():
     repository = UsuarioRepository(session)
     service = UsuarioService(repository)
 
-    def adicionar(Usuario):
+    """def adicionar(Usuario):
         # Solicitando dados.
         print("\nAdicionando usuario.")
         nome = input("Digite seu nome: ")
@@ -74,14 +73,14 @@ def main():
         if usuario:
             print(f"{usuario.nome} -  {usuario.email} - {usuario.senha}")
         else:
-            print("Cliente não encontrado.")
+            print("Cliente não encontrado.")"""
 
     while True:
         print("\n1. Adicionando Usuario.")
-        print("2. Consultar Usuarios.")
-        print("3. Deletar Usuario.")
-        print("4. Atualizar Usuario.")
-        print("5. Consultar 1 Usuario.")
+        print("2. Consultar 1 Usuario.")
+        print("3. Atualizar Usuario.")
+        print("4. Deletar Usuario.")
+        print("5. Exibir todos os usuarios cadastrados.")
         print("0. Sair")
 
    
@@ -89,31 +88,42 @@ def main():
 
         match(opcao):
             case 1:
-                adiciona = adicionar(Usuario)
+                #adiciona = adicionar(Usuario)
+                print("\nAdicionando usuario.")
+                nome = input("Digite seu nome: ")
+                email = input("Digite seu email: ")
+                senha = input("Digite sua senha: ")
+    
+                service.criar_usuario(nome=nome, email=email, senha=senha)
 
                 resposta = input("\nDeseja escolher mais uma opção do menu? ")
                 if resposta == "nao":
                     break
             case 2:
-                consulta = consultar(Usuario)
+                #consulta = consultar(Usuario)
+                service.consultar_usuario_unico()
 
                 resposta = input("\nDeseja escolher mais uma opção do menu? ")
                 if resposta == "nao":
                     break
             case 3:
-                deletar = excluir(Usuario)
+                #deletar = excluir(Usuario)
+                service.atualizar_usuario()
 
                 resposta = input("\nDeseja escolher mais uma opção do menu? ")
                 if resposta == "nao":
                     break
             case 4:
-                atualiza = atualizar(Usuario)
+                #atualiza = atualizar(Usuario)
+                service.excluir_usuario()
 
                 resposta = input("\nDeseja escolher mais uma opção do menu? ")
                 if resposta == "nao":
                     break
             case 5:
-                consultar_um = consultar_apenas_um(Usuario)
+                #consultar_um = consultar_apenas_um(Usuario)
+
+                service.listar_todos_usuarios()
 
                 resposta = input("\nDeseja escolher mais uma opção do menu? ")
                 if resposta == "nao":
