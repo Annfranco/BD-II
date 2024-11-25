@@ -29,8 +29,6 @@ class UsuarioService:
         for usuario in lista_usuarios:
             print(f"{usuario.nome} - {usuario.email} - {usuario.senha}") 
         
-    
-
     def excluir_usuario(self):
         try:
             email_usuario = input("Digite o e-mail do usuario que será excluído: ")
